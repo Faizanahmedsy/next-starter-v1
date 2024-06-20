@@ -1,9 +1,18 @@
-import React from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 
 type Props = {
   children: React.ReactNode;
 };
 
 export default function Providers({ children }: Props) {
-  return <div>{children}</div>;
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      {children}
+    </ThemeProvider>
+  );
 }
