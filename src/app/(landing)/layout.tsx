@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import "./custom.css";
-import "./globals.css";
+import "./../custom.css";
+import "./../globals.css";
+
 import { FooterSection, NavbarSection, Providers } from "@/components";
 
 const fontSans = FontSans({
@@ -28,7 +29,11 @@ export default function LandingRootLayout({
           fontSans.variable
         )}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <NavbarSection />
+          {children}
+          <FooterSection />
+        </Providers>
       </body>
     </html>
   );

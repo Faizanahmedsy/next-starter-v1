@@ -11,7 +11,7 @@ export default function DesktopNav({}: Props) {
         <nav className="flex w-full justify-between screen-max-width">
           <nav>logo</nav>
           <div className="flex gap-6 max-sm:hidden">
-            {["Home", "About", "Contact"].map((link) => (
+            {["Home", "Dashboard", "Contact"].map((link) => (
               <Link
                 key={link}
                 href={`/${
