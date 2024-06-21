@@ -1,10 +1,9 @@
-import Navbar from "@/components/modules/navbar";
-import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./custom.css";
 import "./globals.css";
+import { FooterSection, NavbarSection, Providers } from "@/components";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -30,9 +29,9 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <Navbar />
+          <NavbarSection />
           {children}
-          {/* <Footer /> */}
+          <FooterSection />
         </Providers>
       </body>
     </html>

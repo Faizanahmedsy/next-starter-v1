@@ -1,10 +1,5 @@
-import { Copy } from "lucide-react";
-import BackgroundGrid from "../custom/background-grid";
-import H1 from "../shared/H1";
-import { TextCode } from "../shared/TextCode";
-import Section from "../shared/section";
-import CopyBtn from "./copy-btn";
 import { SITE_CONFIG } from "@/lib/constants/site-config";
+import { Section, BackgroundGrid, H1, TextCode, CopyBtn } from "@/components";
 
 type Props = {};
 

@@ -1,5 +1,5 @@
-import { API } from "./endPoints";
-import instance from "./instance";
+import { API } from "../endPoints";
+import instance from "../instance";
 
 export const getTodos = async () => {
   const resp = await instance.get(API.TODOS.GET);

@@ -1,6 +1,5 @@
 import React from "react";
-import Section from "../shared/section";
-import H2 from "../shared/H2";
+import { Section, H2 } from "@/components";
 import Todos from "./todos";
 
 type Props = {};

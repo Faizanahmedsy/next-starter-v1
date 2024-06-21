@@ -1,6 +1,5 @@
 "use client";
-
-import { getTodos } from "@/services/todo.api";
+import { getTodos } from "@/services/todos/todo.api";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../shared/loader";
 
