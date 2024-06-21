@@ -1,20 +1,19 @@
 import { cn } from "@/lib/utils";
-import React from "react";
 
 type Props = {
   children: React.ReactNode;
   className?: string;
 };
 
-export default function H1({ children, className }: Props) {
+export function TextCode({ children, className }: Props) {
   return (
-    <h2
+    <code
       className={cn(
-        "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
         className
       )}
     >
       {children}
-    </h2>
+    </code>
   );
 }

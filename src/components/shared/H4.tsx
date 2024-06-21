@@ -8,13 +8,13 @@ type Props = {
 
 export default function H1({ children, className }: Props) {
   return (
-    <h2
+    <h4
       className={cn(
-        "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+        "scroll-m-20 text-xl font-semibold tracking-tight",
         className
       )}
     >
       {children}
-    </h2>
+    </h4>
   );
 }
