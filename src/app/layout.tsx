@@ -1,4 +1,4 @@
-import NavbarV2 from "@/components/modules/navbar2";
+import Navbar from "@/components/modules/navbar";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -30,7 +30,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <NavbarV2 />
+          <Navbar />
           {children}
           {/* <Footer /> */}
         </Providers>
