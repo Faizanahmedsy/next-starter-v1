@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -5,15 +6,20 @@ type Props = {};
 export default function Navbar({}: Props) {
   return (
     <header className="w-full py-5 px-5 sm:px-10 flex justify-between items-center">
-      <nav className="flex w-full screen-max-width">
-        logo
-        <div className="flex flex-1 justify-center max-sm:hidden">
-          {["home", "about", "contact"].map((link) => (
-            <div key={link}>{link}</div>
+      <nav className="flex w-full justify-between screen-max-width">
+        <nav>logo</nav>
+        <div className="flex gap-6 max-sm:hidden">
+          {["Home", "About", "Contact"].map((link) => (
+            <Link
+              key={link}
+              href={`/${link.toLowerCase().replace(/\s/g, "-")}`}
+            >
+              {link}
+            </Link>
           ))}
         </div>
+        <nav>search</nav>
       </nav>
-      <nav>search</nav>
     </header>
   );
 }
