@@ -11,7 +11,7 @@ export default function Navbar({}: Props) {
       <div className="hidden md:block">
         <DesktopNav />
       </div>
-      <div className={cn("block md:!hidden")}>
+      <div className="block md:!hidden">
         <MobileNav />
       </div>
     </>
