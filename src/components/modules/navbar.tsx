@@ -13,7 +13,9 @@ export default function Navbar({}: Props) {
           {["Home", "About", "Contact"].map((link) => (
             <Link
               key={link}
-              href={`/${link.toLowerCase().replace(/\s/g, "-")}`}
+              href={`/${
+                link == "Home" ? "" : link.toLowerCase().replace(/\s/g, "-")
+              }`}
             >
               {link}
             </Link>
