@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-export default function H1({ children, className }: Props) {
+export default function H3({ children, className }: Props) {
   return (
     <h3
       className={cn(

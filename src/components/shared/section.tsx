@@ -7,5 +7,5 @@ type Props = {
 };
 
 export default function Section({ children, className }: Props) {
-  return <div className={cn("", className)}>{children}</div>;
+  return <div className={cn("px-32 my-10", className)}>{children}</div>;
 }
