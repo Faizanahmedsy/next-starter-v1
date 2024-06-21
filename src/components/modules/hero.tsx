@@ -1,7 +1,10 @@
+import { Copy } from "lucide-react";
 import BackgroundGrid from "../custom/background-grid";
 import H1 from "../shared/H1";
 import { TextCode } from "../shared/TextCode";
 import Section from "../shared/section";
+import CopyBtn from "./copy-btn";
+import { SITE_CONFIG } from "@/lib/constants/site-config";
 
 type Props = {};
 
@@ -17,9 +20,11 @@ export default function HeroSection({}: Props) {
           </span>{" "}
           <br /> Full Stack Next JS Template
         </H1>
-        <TextCode>
-          git clone https://github.com/Faizanahmedsy/next-starter-v1.git
-        </TextCode>
+        <div className="flex gap-4">
+          <TextCode>{SITE_CONFIG.cloneLink}</TextCode>
+
+          <CopyBtn />
+        </div>
       </div>
     </Section>
   );
