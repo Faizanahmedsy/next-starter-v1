@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { ModeToggle } from "../shared/theme-toggle";
 
 type Props = {};
 
@@ -18,7 +19,9 @@ export default function Navbar({}: Props) {
             </Link>
           ))}
         </div>
-        <nav>search</nav>
+        <nav>
+          <ModeToggle />
+        </nav>
       </nav>
     </header>
   );
