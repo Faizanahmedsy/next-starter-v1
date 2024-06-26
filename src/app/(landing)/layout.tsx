@@ -31,8 +31,8 @@ export default function LandingRootLayout({
       >
         <Providers>
           <NavbarSection />
-          {children}
-          <FooterSection />
+          <main className="min-h-screen overflow-hidden">{children}</main>
+          {/* <FooterSection /> */}
         </Providers>
       </body>
     </html>
