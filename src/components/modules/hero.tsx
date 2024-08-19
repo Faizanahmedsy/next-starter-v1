@@ -6,7 +6,6 @@ type Props = {};
 export default function HeroSection({}: Props) {
   return (
     <Section className="w-full nav-height m-0">
-      <BackgroundGrid color={"#1e293b"} />
       <div className="h-full w-full flex-center flex-col gap-4">
         <H1 className="text-center z-10 darK:text-zinc-300">
           Welcome to{" "}
