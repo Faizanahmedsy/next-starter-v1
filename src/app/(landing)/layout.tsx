@@ -22,19 +22,10 @@ export default function LandingRootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-        <Providers>
-          <NavbarSection />
-          <main className="min-h-screen overflow-hidden">{children}</main>
-          {/* <FooterSection /> */}
-        </Providers>
-      </body>
-    </html>
+    <>
+      <NavbarSection />
+      <main className="min-h-screen overflow-hidden">{children}</main>
+      <FooterSection />
+    </>
   );
 }
