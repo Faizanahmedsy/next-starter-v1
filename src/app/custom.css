@@ -21,7 +21,7 @@
   }
 
   .nav-height {
-    @apply h-[calc(100dvh-40px)];
+    @apply h-[calc(100dvh-10px)];
   }
 
   .btn {

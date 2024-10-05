@@ -7,7 +7,7 @@ import { Earth } from "lucide-react";
 export default function NavbarSection() {
   return (
     <>
-      <nav className="flex items-center justify-between  md:px-32 px-8  fixed top-0 right-0 left-0 text-white dark:bg-black bg-slate-800 z-50">
+      <nav className="flex items-center justify-between  md:px-32 px-8  fixed top-0 right-0 left-0 text-black dark:bg-black bg-slate-100 z-50">
         <div className="flex justify-between items-center gap-2 font-bold text-brand uppercase">
           <Earth size={45} />
           <div className="flex flex-col text-s">

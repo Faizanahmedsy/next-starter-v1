@@ -1,5 +1,5 @@
 export const SITE_CONFIG = Object.freeze({
-  brandName: "Vikasa",
+  brandName: "Acme",
   title: "My Site",
   cloneLink: "git clone https://github.com/Faizanahmedsy/next-starter-v1.git",
   description: "My site description",

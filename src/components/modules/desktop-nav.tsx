@@ -10,7 +10,7 @@ export default function DesktopNav({}: Props) {
       <header className="w-full py-5 px-5 sm:px-10 flex justify-between items-center">
         <nav className="flex w-full justify-between screen-max-width">
           <div className="flex gap-6 max-sm:hidden justify-center items-center mx-10">
-            {["Home", "Dashboard", "Contact"].map((link) => (
+            {["Home", "Dashboard", "Contact", "Login", "Signup"].map((link) => (
               <Link
                 key={link}
                 href={`/${
