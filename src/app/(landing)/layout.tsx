@@ -16,11 +16,11 @@ export default function LandingRootLayout({
 }>) {
   return (
     <>
-      <NavbarSection />
-      <main className="mt-[80px] overflow-hidden bg-gradient-to-tl from-slate-300 via-slate-50 to-slate-300">
-        {children}
-      </main>
-      <FooterSection />
+      <div className="bg-gradient-to-tl from-slate-300 via-slate-50 to-slate-300">
+        <NavbarSection />
+        <main className="pt-[80px] overflow-hidden ">{children}</main>
+        <FooterSection />
+      </div>
     </>
   );
 }
