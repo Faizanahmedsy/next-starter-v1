@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Area,
@@ -17,7 +17,7 @@ import {
   ReferenceLine,
   XAxis,
   YAxis,
-} from "recharts"
+} from "recharts";
 
 import {
   Card,
@@ -26,13 +26,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/chart";
+import { Separator } from "@/components/ui/separator";
 
 export default function Charts() {
   return (
@@ -112,7 +112,7 @@ export default function Charts() {
                   tickFormatter={(value) => {
                     return new Date(value).toLocaleDateString("en-US", {
                       weekday: "short",
-                    })
+                    });
                   }}
                 />
                 <ChartTooltip
@@ -125,7 +125,7 @@ export default function Charts() {
                           day: "numeric",
                           month: "long",
                           year: "numeric",
-                        })
+                        });
                       }}
                     />
                   }
@@ -254,7 +254,7 @@ export default function Charts() {
                   tickFormatter={(value) => {
                     return new Date(value).toLocaleDateString("en-US", {
                       weekday: "short",
-                    })
+                    });
                   }}
                 />
                 <Line
@@ -279,7 +279,7 @@ export default function Charts() {
                           day: "numeric",
                           month: "long",
                           year: "numeric",
-                        })
+                        });
                       }}
                     />
                   }
@@ -298,7 +298,7 @@ export default function Charts() {
           <CardHeader>
             <CardTitle>Progress</CardTitle>
             <CardDescription>
-              You're average more steps a day this year than last year.
+              You&aposre average more steps a day this year than last year.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
@@ -699,7 +699,7 @@ export default function Charts() {
           <CardHeader className="p-4 pb-0">
             <CardTitle>Active Energy</CardTitle>
             <CardDescription>
-              You're burning an average of 754 calories per day. Good job!
+              You&aposre burning an average of 754 calories per day. Good job!
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-row items-baseline gap-4 p-4 pt-2">
@@ -885,5 +885,5 @@ export default function Charts() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
