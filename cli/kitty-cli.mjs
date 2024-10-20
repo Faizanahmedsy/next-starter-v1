@@ -58,35 +58,41 @@ const getTemplateContent = (templateFile) => {
 // Define paths for different module files
 const paths = [
   {
-    path: `${moduleFolder}/list/${capitalizeFirstLetter(moduleName)}List.tsx`,
+    path: `${moduleFolder}/components/list/${capitalizeFirstLetter(
+      moduleName
+    )}List.tsx`,
     content: getTemplateContent("ListComponent.json"),
   },
   {
-    path: `${moduleFolder}/list/${capitalizeFirstLetter(
+    path: `${moduleFolder}/components/list/${capitalizeFirstLetter(
       moduleName
     )}ListTable.tsx`,
     content: getTemplateContent("ListTable.json"),
   },
   {
-    path: `${moduleFolder}/list/columns.tsx`,
+    path: `${moduleFolder}/components/list/columns.tsx`,
     content: getTemplateContent("Columns.json"),
   },
   {
-    path: `${moduleFolder}/list/ActionsCell.tsx`,
+    path: `${moduleFolder}/components/list/ActionsCell.tsx`,
     content: getTemplateContent("ActionsCell.json"),
   },
   {
-    path: `${moduleFolder}/${capitalizeFirstLetter(moduleName)}.hook.ts`,
+    path: `${moduleFolder}/action/${capitalizeFirstLetter(
+      moduleName
+    )}.action.ts`,
     content: getTemplateContent("ApiHook.json"),
   },
   {
-    path: `${moduleFolder}/mutate/CreateUpdate${capitalizeFirstLetter(
+    path: `${moduleFolder}/components/mutate/CreateUpdate${capitalizeFirstLetter(
       moduleName
     )}.tsx`,
     content: getTemplateContent("CreateUpdateComponent.json"),
   },
   {
-    path: `${moduleFolder}/mutate/${capitalizeFirstLetter(moduleName)}Form.tsx`,
+    path: `${moduleFolder}/components/mutate/${capitalizeFirstLetter(
+      moduleName
+    )}Form.tsx`,
     content: getTemplateContent("ComponentForm.json"),
   },
   {
