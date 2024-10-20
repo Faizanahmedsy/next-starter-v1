@@ -7,12 +7,12 @@ type Props = {
 
 export default async function DashboardRootLayout({ children }: Props) {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main>
-        <SidebarTrigger />
-        {children}
-      </main>
-    </SidebarProvider>
+    // <SidebarProvider>
+    //   <AppSidebar />
+    <main>
+      {/* <SidebarTrigger /> */}
+      {children}
+    </main>
+    // </SidebarProvider>
   );
 }

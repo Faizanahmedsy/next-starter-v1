@@ -1,14 +1,22 @@
+import * as React from "react";
+import {
+  ChevronDown,
+  ChevronRight,
+  ChevronUp,
+  Database,
+  File,
+  Folder,
+  Plus,
+  Receipt,
+  User2,
+  UsersRound,
+} from "lucide-react";
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -23,17 +31,46 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
-  SidebarMenuSubItem,
-  SidebarSeparator,
+  SidebarRail,
 } from "@/components/ui/sidebar";
-import { items } from "@/constants";
-import { ChevronDown, ChevronUp, Plus, User2 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
 
-// Menu items.
+// This is sample data.
+const data = {
+  changes: [
+    {
+      file: "Invoice",
+      state: "+10",
+      icon: <Receipt />,
+    },
+    {
+      file: "Services",
+      state: "14",
+      icon: <Database />,
+    },
+    {
+      file: "Customers",
+      state: "278",
+      icon: <UsersRound />,
+    },
+  ],
+  tree: [
+    ["Acmi", ["Apex"], ["Super Nova"]],
+    ["Batman", ["ui", "button.tsx", "card.tsx"], "header.tsx", "footer.tsx"],
+    ["Freelancing", ["util.ts"]],
+    ["Acmi", "favicon.ico", "vercel.svg"],
+  ],
+};
 
-export function AppSidebar() {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar variant="floating" collapsible="icon">
+    <Sidebar {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -56,53 +93,39 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarSeparator />
-
       <SidebarContent>
+        <Button className=" mx-3">
+          <Plus />
+          New Invoice
+        </Button>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupAction>
-            <Plus /> <span className="sr-only">Add Project</span>
-          </SidebarGroupAction>
+          <SidebarGroupLabel>Manage</SidebarGroupLabel>
+
           <SidebarGroupContent>
             <SidebarMenu>
-              <Collapsible defaultOpen className="group/collapsible">
-                {items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </Collapsible>
+              {data.changes.map((item, index) => (
+                <SidebarMenuItem key={index}>
+                  <SidebarMenuButton>
+                    {item?.icon ? item?.icon : <File />}
+                    {item.file}
+                  </SidebarMenuButton>
+                  <SidebarMenuBadge>{item.state}</SidebarMenuBadge>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarMenu>
-          <Collapsible defaultOpen className="group/collapsible">
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton>
-                  <span>Projects</span>
-                  <ChevronDown className="ml-auto" />
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuBadge>24</SidebarMenuBadge>
-                    <a href="#">Project 1</a>
-                  </SidebarMenuSubItem>
-                </SidebarMenuSub>
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
-        </SidebarMenu>
+        <SidebarGroup>
+          <SidebarGroupLabel>Customers</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {data.tree.map((item, index) => (
+                <Tree key={index} item={item} />
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
-
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -131,6 +154,48 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
+
+      <SidebarRail />
     </Sidebar>
+  );
+}
+
+function Tree({ item }: { item: string | any[] }) {
+  const [name, ...items] = Array.isArray(item) ? item : [item];
+
+  if (!items.length) {
+    return (
+      <SidebarMenuButton
+        isActive={name === "button.tsx"}
+        className="data-[active=true]:bg-transparent"
+      >
+        <File />
+        {name}
+      </SidebarMenuButton>
+    );
+  }
+
+  return (
+    <SidebarMenuItem>
+      <Collapsible
+        className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
+        defaultOpen={name === "components" || name === "ui"}
+      >
+        <CollapsibleTrigger asChild>
+          <SidebarMenuButton>
+            <ChevronRight className="transition-transform" />
+            <Folder />
+            {name}
+          </SidebarMenuButton>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <SidebarMenuSub>
+            {items.map((subItem, index) => (
+              <Tree key={index} item={subItem} />
+            ))}
+          </SidebarMenuSub>
+        </CollapsibleContent>
+      </Collapsible>
+    </SidebarMenuItem>
   );
 }
