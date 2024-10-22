@@ -63,23 +63,23 @@ const paths = [
   },
   {
     path: `${moduleFolder}/components/details/${moduleName.toLowerCase()}-details.tsx`,
-    content: getTemplateContent("ListComponent.json"),
+    content: getTemplateContent("details.json"),
   },
   {
     path: `${moduleFolder}/components/list/${moduleName.toLowerCase()}-list.tsx`,
-    content: getTemplateContent("ListComponent.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/components/list/${moduleName.toLowerCase()}-listTable.tsx`,
-    content: getTemplateContent("ListTable.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/components/list/columns.tsx`,
-    content: getTemplateContent("Columns.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/components/list/actions-cell.tsx`,
-    content: getTemplateContent("ActionsCell.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/action/${moduleName.toLowerCase()}.action.ts`,
@@ -87,15 +87,15 @@ const paths = [
   },
   {
     path: `${moduleFolder}/components/mutate/create-update-${moduleName.toLowerCase()}.tsx`,
-    content: getTemplateContent("CreateUpdateComponent.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/components/mutate/${moduleName.toLowerCase()}-form.tsx`,
-    content: getTemplateContent("ComponentForm.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/${moduleName.toLowerCase()}.types.ts`,
-    content: getTemplateContent("types.json"),
+    content: getTemplateContent("test.json"),
   },
 ];
 
