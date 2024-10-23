@@ -40,6 +40,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 // This is sample data.
 const data = {
@@ -48,16 +49,19 @@ const data = {
       file: "Invoice",
       state: "+10",
       icon: <Receipt />,
+      href: "/invoice",
     },
     {
       file: "Services",
       state: "14",
       icon: <Database />,
+      href: "/",
     },
     {
       file: "Customers",
       state: "278",
       icon: <UsersRound />,
+      href: "/app/customer",
     },
   ],
   tree: [
@@ -105,11 +109,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenu>
               {data.changes.map((item, index) => (
                 <SidebarMenuItem key={index}>
-                  <SidebarMenuButton>
-                    {item?.icon ? item?.icon : <File />}
-                    {item.file}
-                  </SidebarMenuButton>
-                  <SidebarMenuBadge>{item.state}</SidebarMenuBadge>
+                  <Link href={item?.href}>
+                    <SidebarMenuButton>
+                      {item?.icon ? item?.icon : <File />}
+                      {item.file}
+                    </SidebarMenuButton>
+                    <SidebarMenuBadge>{item.state}</SidebarMenuBadge>
+                  </Link>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>

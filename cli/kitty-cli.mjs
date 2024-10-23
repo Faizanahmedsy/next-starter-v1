@@ -63,7 +63,7 @@ const paths = [
   },
   {
     path: `${moduleFolder}/components/details/${moduleName.toLowerCase()}-details.tsx`,
-    content: getTemplateContent("details.json"),
+    content: "",
   },
   {
     path: `${moduleFolder}/components/list/${moduleName.toLowerCase()}-list.tsx`,
