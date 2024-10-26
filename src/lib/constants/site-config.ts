@@ -1,10 +1,10 @@
 export const SITE_CONFIG = Object.freeze({
   brandName: "Acme",
   title: "My Site",
-  cloneLink: "git clone https://github.com/Faizanahmedsy/next-starter-v1.git",
+  cloneLink: "git clone https://github.com/Faizanahmedsy/kitty-start.git",
   description: "My site description",
   contact: {
-    email: "info@tomatotech.com",
+    email: "saiyed.faizanahmed1@gmail.com",
   },
   color: {
     primary: "",

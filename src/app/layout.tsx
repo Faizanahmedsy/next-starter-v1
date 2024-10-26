@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, Poppins } from "next/font/google";
 import "./custom.css";
 import "./globals.css";
 import { FooterSection, NavbarSection, Providers } from "@/components";
@@ -8,6 +8,12 @@ import { FooterSection, NavbarSection, Providers } from "@/components";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,8 @@ export default function LandingRootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased light",
-          fontSans.variable
+          fontSans.variable,
+          poppins.variable
         )}
       >
         <Providers>{children}</Providers>

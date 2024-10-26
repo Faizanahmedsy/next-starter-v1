@@ -16,6 +16,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        poppins: ["var(--font-poppins)", "Poppins", ...fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
