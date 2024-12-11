@@ -1,7 +1,5 @@
-import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 import type { Column } from "@tanstack/react-table";
 
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +17,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { Check, CirclePlus } from "lucide-react";
 import React from "react";
 
 export interface OptionType {
@@ -32,20 +32,23 @@ interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>;
   title?: string;
   options: OptionType[];
+  className?: string;
 }
 
 export function DataTableFacetedFilter<TData, TValue>({
   column,
   title,
   options,
+  className,
 }: DataTableFacetedFilterProps<TData, TValue>) {
   const selectedValues = new Set(column?.getFilterValue() as string[]);
+  console.log(className);
 
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8 border-dashed">
-          <PlusCircledIcon className="mr-2 size-4" />
+          <CirclePlus className="mr-2 size-4" />
           {title}
           {selectedValues?.size > 0 && (
             <>
@@ -108,7 +111,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                           : "opacity-50 [&_svg]:invisible"
                       )}
                     >
-                      <CheckIcon className="size-4" aria-hidden="true" />
+                      <Check className="size-4" aria-hidden="true" />
                     </div>
                     {option.icon && (
                       <option.icon
