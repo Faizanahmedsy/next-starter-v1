@@ -11,7 +11,7 @@
 .screen-max-width {
   margin-inline-start: auto;
   margin-inline-end: auto;
-  postion: relative;
+  position: relative;
   max-width: 1120px;
 }
 
@@ -25,6 +25,6 @@
   }
 
   .btn {
-    @apply px-5 py-2 rounded-3xl bg-blue my-5 hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue;
+    @apply px-5 py-2 rounded-3xl bg-blue-200 my-5 hover:bg-transparent border border-transparent hover:border hover:text-blue-200 hover:border-blue-200;
   }
 }
